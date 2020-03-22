@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:900,300);
+body {
+  background-color: #f0f0f0;
+  font-family: roboto;
+}
+.container {
+  width: 400px;
+  margin: 120px auto 120px;
+  background-color: #fff;
+  padding: 10px 20px 20px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+  text-align: center;
+}
+input[type=text],input[type=EmailField], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+h4 {
+  font-size: 13px;
+  color: #00baff;
+  letter-spacing: 1px;
+  margin-bottom: 25px
+}
+</style>
+<body>
+
+
+
+<div class="container">
+    <h4>Remplisser ce formulaire pour recevoir les analyses dès qu'elles sont prêtes.</h4>
+  <form action=/form/>
+    {% csrf_token %}
+    <label for="fname">Kit Number</label>
+    <input type="text" id="knb" name="kitnumber" value={{nb}} readonly="readonly">
+    <label for="fname">Prènom</label>
+    <input type="text" id="fname" name="fname" placeholder="Votre prènom">
+
+    <label for="lname">Nom</label>
+    <input type="text" id="lname" name="lname" placeholder="Votre Nom">
+    <label for="mail">Email</label>
+    <input type="EmailField" id="email" name="mail" placeholder="Votre Email">
+
+
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
